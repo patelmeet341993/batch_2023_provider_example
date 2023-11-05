@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_example/Page1.dart';
 import 'package:provider_example/dataprovider.dart';
+import 'package:provider_example/listview_provider/userprovider.dart';
+
+import 'listview_provider/listview_home.dart';
 
 void main() {
 
@@ -9,6 +12,7 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => DataProvider()),
+        ChangeNotifierProvider(create: (_) => UserProvider()),
       ],
       child: const MyApp(),
     ),
@@ -42,7 +46,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:Page1(),
+      home:ListViewHome(),
     );
   }
 }
